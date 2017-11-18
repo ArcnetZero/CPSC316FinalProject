@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "outputFile": "/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 97
                 },
                 "from": {
-                    "file": "C:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\res\\values\\strings.xml",
+                    "file": "/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/res/values/strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -31,7 +31,52 @@
                     "endOffset": 560
                 },
                 "from": {
-                    "file": "C:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\res\\values\\styles.xml",
+                    "file": "/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/res/values/styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 17,
+                        "endLine": 9,
+                        "endColumn": 12,
+                        "endOffset": 475
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/C:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 46,
+                    "endOffset": 97
+                },
+                "from": {
+                    "file": "/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/C:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 46,
+                        "endOffset": 98
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 102,
+                    "endLine": 10,
+                    "endColumn": 12,
+                    "endOffset": 560
+                },
+                "from": {
+                    "file": "/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/C:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
