@@ -36,7 +36,7 @@ ADDED from C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\and
 activity#com.jump.game.AndroidLauncher
 ADDED from C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\AndroidManifest.xml:12:9-21:20
 	android:screenOrientation
-		ADDED from C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\AndroidManifest.xml:15:13-50
+		ADDED from C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\AndroidManifest.xml:15:13-49
 	android:label
 		ADDED from C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\AndroidManifest.xml:14:13-45
 	android:configChanges
