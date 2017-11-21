@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.input.GestureDetector.GestureListener;
@@ -50,6 +51,8 @@ public class JumpGame extends ApplicationAdapter {
 		for(int i=0;i<5;i++){
 		    touches.put(i,new TouchInfo());
         }
+        w = Gdx.graphics.getWidth();
+		h = Gdx.graphics.getHeight();
 	}
 
 	@Override
@@ -65,6 +68,11 @@ public class JumpGame extends ApplicationAdapter {
                         Float.toString(touches.get(i).touchY) + "\n";
             }
         }
+        float x = w/2;
+		float y = h/2;
+		GlyphLayout layout = new GlyphLayout();
+		layout.setText(message);
+        font.draw(batch, message, x, y);
 		batch.end();
 	}
 	
