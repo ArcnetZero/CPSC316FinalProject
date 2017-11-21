@@ -1,15 +1,18 @@
 #Internal package file, do not edit.
-#Sat Nov 18 10:07:54 CST 2017
-1.base=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\res\\resources-debug.ap_
-1.file=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\res\\resources-debug.ap_\\AndroidManifest.xml
-2.base=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\assets\\debug
-3.set=ANDROID_RESOURCE
-2.set=ASSET
-2.file=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\assets\\debug\\badlogic.jpg
-count=4
-1.set=ANDROID_RESOURCE
-3.base=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\res\\resources-debug.ap_
+#Tue Nov 21 15:35:46 CST 2017
+1.base=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\assets\\debug
+4.file=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\res\\resources-debug.ap_\\resources.arsc
+1.file=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\assets\\debug\\Pixel-Miners.otf
+4.set=ANDROID_RESOURCE
+2.base=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\res\\resources-debug.ap_
+3.set=ASSET
+2.set=ANDROID_RESOURCE
+2.file=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\res\\resources-debug.ap_\\AndroidManifest.xml
+count=5
+1.set=ASSET
+3.base=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\assets\\debug
 0.set=ANDROID_RESOURCE
 0.base=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\res\\resources-debug.ap_
-3.file=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\res\\resources-debug.ap_\\resources.arsc
+3.file=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\assets\\debug\\badlogic.jpg
 0.file=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxxhdpi-v4\\ic_launcher.png
+4.base=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\res\\resources-debug.ap_
