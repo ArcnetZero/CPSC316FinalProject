@@ -65,7 +65,6 @@ public class JumpGame extends ApplicationAdapter {
                         Float.toString(touches.get(i).touchY) + "\n";
             }
         }
-        TextBounds tb = font.getBounds(message);
 		batch.end();
 	}
 	
