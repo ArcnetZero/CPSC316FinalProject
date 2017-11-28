@@ -16,14 +16,14 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 public class Jumper {
 
     private final int jumpDown = -100;
-    private final int jumpLeft = -75;
-    private final int jumpRight = 75;
     private Vector2 velocity;
     private Vector2 position;
     private Texture jumper;
     private Sprite sprite;
+    private boolean isFollowing;
 
     public Jumper() {
+        isFollowing = false;
         jumper = new Texture("jumperDude.png");
         sprite = new Sprite(jumper);
         velocity = new Vector2(0, 0);
@@ -37,14 +37,23 @@ public class Jumper {
         }*/
         velocity.add(0, jumpDown);
         velocity.scl(dt);
-        position.add(velocity.x * dt , velocity.y * dt);
-        velocity.scl(1 / dt);
+        if(isFollowing){
+            position.add(Gdx.input.getX(),velocity.y * dt);
+            velocity.scl(1/dt);
+        }
+        else{
+            position.add(0,velocity.y * dt);
+            velocity.scl(1/dt);
+        }
 
     }
 
+    public void isFollowing(boolean bool){
+        isFollowing = bool;
+    }
     public void jump() {
-        velocity.x = 2500;
-        velocity.y = 15000;
+        position.x = Gdx.input.getX()-164;
+        velocity.y = 7000;
     }
 
     public Vector2 getPosition() {

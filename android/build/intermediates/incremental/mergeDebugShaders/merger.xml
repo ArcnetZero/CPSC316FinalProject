@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/src/debug/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\src\debug\shaders"/></dataSet></merger>

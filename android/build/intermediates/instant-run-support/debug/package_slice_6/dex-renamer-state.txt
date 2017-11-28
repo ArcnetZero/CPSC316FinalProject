@@ -1,4 +1,4 @@
-#Sun Nov 26 17:06:33 CST 2017
-base.0=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6
+#Tue Nov 28 14:48:11 CST 2017
+base.0=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_6
 renamed.0=classes.dex
-file.0=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex
+file.0=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_6\\classes.dex

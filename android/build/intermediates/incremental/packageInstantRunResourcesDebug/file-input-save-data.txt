@@ -1,18 +1,15 @@
 #Internal package file, do not edit.
-#Sun Nov 26 17:09:56 CST 2017
-1.base=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/assets/debug
-4.file=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/ic_launcher.png
-1.file=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/assets/debug/badlogic.jpg
-4.set=ANDROID_RESOURCE
-2.base=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/res/resources-debug.ap_
+#Tue Nov 28 14:48:04 CST 2017
+1.base=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\res\\resources-debug.ap_
+1.file=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\res\\resources-debug.ap_\\AndroidManifest.xml
+2.base=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\res\\resources-debug.ap_
 3.set=ASSET
 2.set=ANDROID_RESOURCE
-2.file=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/res/resources-debug.ap_/AndroidManifest.xml
-count=5
-1.set=ASSET
-3.base=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/assets/debug
+2.file=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\res\\resources-debug.ap_\\resources.arsc
+count=4
+1.set=ANDROID_RESOURCE
+3.base=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\assets\\debug
 0.set=ANDROID_RESOURCE
-0.base=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/res/resources-debug.ap_
-3.file=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/assets/debug/jumperDude.png
-0.file=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/res/resources-debug.ap_/resources.arsc
-4.base=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/res/resources-debug.ap_
+0.base=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\res\\resources-debug.ap_
+3.file=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\assets\\debug\\jumperDude.png
+0.file=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxxhdpi-v4\\ic_launcher.png

@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 //We use TextureAtlas to group animated images together;
 
 
-//what ApplicationAdaptor does is it includes a bunch of methods that can be called automatically at different points in your gane.
+//what ApplicationAdaptor does is it includes a bunch of methods that can be called automatically at different points in your game.
 //i.g create()/render()/dispose() etc
 public class JumpGame extends ApplicationAdapter {
 
@@ -19,6 +19,9 @@ public class JumpGame extends ApplicationAdapter {
 
 	@Override
 	public void create () {
+		Gdx.graphics.setContinuousRendering(true);
+		System.out.println(Gdx.graphics.getHeight());
+		System.out.println(Gdx.graphics.getWidth());
 		gsm = new GameStateManager();
 		batch = new SpriteBatch();
 		Gdx.gl.glClearColor(1, 1, 1, 1);

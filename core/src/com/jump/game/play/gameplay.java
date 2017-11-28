@@ -25,7 +25,7 @@ public class gameplay extends state implements ApplicationListener, InputProcess
 
     @Override
     public void handleInput() {
-        if(Gdx.input.justTouched()) {
+        while(Gdx.input.isTouched()){
             jumper.jump();
         }
     }
@@ -88,11 +88,13 @@ public class gameplay extends state implements ApplicationListener, InputProcess
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        jumper.isFollowing(false);
         return true;
     }
 
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+        jumper.isFollowing(true);
         return true;
     }
 
