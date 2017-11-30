@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
 /**
  * Created by Ryan.T on 11/21/17.
@@ -15,52 +16,55 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 
 public class Jumper {
 
-    private final int jumpDown = -100;
+    private final int Gravity = -100;
     private Vector2 velocity;
     private Vector2 position;
     private Texture jumper;
     private Sprite sprite;
-    private boolean isFollowing;
+    //private Image jumper;
+
 
     public Jumper() {
-        isFollowing = false;
         jumper = new Texture("jumperDude.png");
         sprite = new Sprite(jumper);
+        //jumper = new Image(new Texture(Gdx.files.internal("jumperDude.png")));
         velocity = new Vector2(0, 0);
-        position = new Vector2(0,0);
+        position = new Vector2(0, 0);
     }
 
     public void update(float dt) {
 
-        /*if (position.y > 0) {
-            velocity.add(0, jumpUp);
-        }*/
-        velocity.add(0, jumpDown);
+        if (position.y > 0) {
+            velocity.add(0, Gravity);
+        }
+        velocity.add(0, Gravity);
         velocity.scl(dt);
-        if(isFollowing){
-            position.add(Gdx.input.getX(),velocity.y * dt);
-            velocity.scl(1/dt);
-        }
-        else{
-            position.add(0,velocity.y * dt);
-            velocity.scl(1/dt);
+        position.add(velocity.x, velocity.y * dt);
+        velocity.scl(1/dt);
         }
 
+
+    public void jump(){
+        velocity.y = 18000;
     }
 
-    public void isFollowing(boolean bool){
-        isFollowing = bool;
-    }
-    public void jump() {
-        position.x = Gdx.input.getX()-164;
-        velocity.y = 7000;
+    public void jumpLeft(){
+        velocity.x =  -50;
     }
 
-    public Vector2 getPosition() {
+    public void jumpRight() {
+        velocity.x = 50;
+    }
+
+    public Vector2 getPosition(){
         return position;
     }
 
-    public Texture getJumper() {
+    public Sprite getJumper(){
+        return sprite;
+    }
+
+    public Texture getJumperTex() {
         return jumper;
     }
 }

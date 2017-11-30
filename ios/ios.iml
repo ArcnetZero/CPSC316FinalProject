@@ -13,7 +13,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/build/classes/main" />
     <output-test url="file://$MODULE_DIR$/build/classes/test" />
     <exclude-output />
@@ -36,5 +36,9 @@
     <orderEntry type="library" exported="" name="robovm-cocoatouch-2.3.3" level="project" />
     <orderEntry type="library" exported="" name="robovm-objc-2.3.3" level="project" />
     <orderEntry type="library" exported="" name="robovm-rt-2.3.3" level="project" />
+    <orderEntry type="library" exported="" name="ios.ios-1.0" level="project" />
+    <orderEntry type="library" exported="" name="ios.ios-1.0" level="project" />
+    <orderEntry type="library" exported="" name="ios.ios-1.0" level="project" />
+    <orderEntry type="library" exported="" name="ios.ios-1.0" level="project" />
   </component>
 </module>
