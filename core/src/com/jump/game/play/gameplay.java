@@ -39,7 +39,7 @@ public class gameplay extends state  {
     private Rectangle leftHalf;
 
     ArrayList<Platforms> platform;
-
+    //something
     public gameplay(GameStateManager gsm) {
         super(gsm);
         jumper = new Jumper();
