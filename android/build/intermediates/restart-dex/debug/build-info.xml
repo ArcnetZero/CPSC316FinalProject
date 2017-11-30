@@ -6,25 +6,31 @@
     density="xxxhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1512079429843"
+    timestamp="1512083034553"
     token="2991791110925778154"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="296" />
+        duration="265" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="28" />
+        duration="200" />
     <task
         name="verifier"
-        duration="5" />
+        duration="72" />
 
     <artifact
+        location="C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
         location="C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_4.apk"
         type="SPLIT" />
 
     <build
@@ -70,10 +76,16 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1512079429843"
+        timestamp="1512083034553"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
+            location="C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
     </build>
 

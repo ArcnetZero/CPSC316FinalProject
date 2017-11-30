@@ -17,6 +17,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 public class Jumper {
 
     private final int Gravity = -100;
+    private final int sideSpeed = 300;
+
+
+    private final int spriteSize = 200;
     private Vector2 velocity;
     private Vector2 position;
     private Texture jumper;
@@ -35,7 +39,22 @@ public class Jumper {
     }
 
     public void update(float dt) {
-
+        if(moveLeft){
+            if(position.x<=0){
+                position.x=0;
+            }
+            else {
+                position.x -= sideSpeed * dt;
+            }
+        }
+        if(moveRight){
+            if(position.x>=(Gdx.graphics.getWidth()-spriteSize)){
+                position.x=(Gdx.graphics.getWidth()-spriteSize);
+            }
+            else {
+                position.x += sideSpeed * dt;
+            }
+        }
         if (position.y > 0) {
             velocity.add(0, Gravity);
         }
@@ -43,8 +62,27 @@ public class Jumper {
         velocity.scl(dt);
         position.add(velocity.x, velocity.y * dt);
         velocity.scl(1/dt);
-        }
+    }
 
+    public void setMoveLeft(boolean bool){
+        moveLeft = bool;
+        if(bool){
+            moveRight = false;
+        }
+        else{
+            moveRight = true;
+        }
+    }
+
+    public void setMoveRight(boolean bool){
+        moveRight = bool;
+        if(bool){
+            moveLeft = false;
+        }
+        else{
+            moveLeft = true;
+        }
+    }
 
     public void jump(){
         velocity.y = 18000;
@@ -69,4 +107,9 @@ public class Jumper {
     public Texture getJumperTex() {
         return jumper;
     }
+
+    public int getSpriteSize() {
+        return spriteSize;
+    }
+
 }

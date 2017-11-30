@@ -6,6 +6,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.jump.game.JumpGame;
 import com.jump.game.play.*;
 import com.jump.game.sprite.*;
 import com.jump.game.sprite.Jumper;
@@ -25,7 +26,7 @@ public class gameplay extends state implements ApplicationListener, InputProcess
 
     @Override
     public void handleInput() {
-        if(Gdx.input.justTouched()) {
+        if (Gdx.input.justTouched()) {
             jumper.jump();
         }
     }
@@ -33,13 +34,15 @@ public class gameplay extends state implements ApplicationListener, InputProcess
     @Override
     public void update(float dt) {
         handleInput();
+        touchDown(Gdx.input.getX(), Gdx.input.getY(), 0, 0);
+        touchUp(Gdx.input.getX(), Gdx.input.getY(), 0, 0);
         jumper.update(Gdx.graphics.getDeltaTime());
     }
 
     @Override
     public void render(SpriteBatch sb) {
         sb.begin();
-        sb.draw(jumper.getJumper(), jumper.getPosition().x, jumper.getPosition().y);
+        sb.draw(jumper.getJumper(), jumper.getPosition().x, jumper.getPosition().y, jumper.getSpriteSize(), Math.round(jumper.getSpriteSize() * 1.34));
         sb.end();
     }
 
@@ -88,11 +91,21 @@ public class gameplay extends state implements ApplicationListener, InputProcess
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        if (Gdx.input.getX() >= Gdx.graphics.getWidth() / 2) {
+            jumper.setMoveLeft(true);
+        } else {
+            jumper.setMoveRight(true);
+        }
         return true;
     }
 
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+        if (Gdx.input.getX() >= Gdx.graphics.getWidth() / 2) {
+            jumper.setMoveLeft(false);
+        } else {
+            jumper.setMoveRight(false);
+        }
         return true;
     }
 

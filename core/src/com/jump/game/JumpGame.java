@@ -16,7 +16,6 @@ public class JumpGame extends ApplicationAdapter {
 	private SpriteBatch batch;
 	private GameStateManager gsm;
 
-
 	@Override
 	public void create () {
 		Gdx.graphics.setContinuousRendering(true);
