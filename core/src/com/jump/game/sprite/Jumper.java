@@ -21,6 +21,8 @@ public class Jumper {
     private Vector2 position;
     private Texture jumper;
     private Sprite sprite;
+    private boolean moveLeft;
+    private boolean moveRight;
     //private Image jumper;
 
 

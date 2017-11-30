@@ -30,7 +30,6 @@ public class JumpGame extends ApplicationAdapter {
 	}
 
 	public void render () {
-
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		gsm.update(Gdx.graphics.getDeltaTime());
 		gsm.render(batch);
