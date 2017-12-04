@@ -23,7 +23,7 @@ public class JumpGame extends ApplicationAdapter {
 		System.out.println(Gdx.graphics.getWidth());
 		gsm = new GameStateManager();
 		batch = new SpriteBatch();
-		Gdx.gl.glClearColor(1, 1, 1, 1);
+		Gdx.gl.glClearColor((float)60/255,(float)181/255,0f,0f);
 		gsm.push(new gameplay(gsm));
 
 	}

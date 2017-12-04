@@ -8,8 +8,12 @@ import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.jump.game.JumpGame;
 import com.jump.game.play.*;
-import com.jump.game.sprite.*;
+import com.jump.game.sprite.Platforms;
 import com.jump.game.sprite.Jumper;
+import com.badlogic.gdx.utils.Array;
+import java.util.Random;
+
+import java.util.ArrayList;
 
 /**
  * Created by Ryan.T on 11/21/17.
@@ -17,11 +21,22 @@ import com.jump.game.sprite.Jumper;
 
 public class gameplay extends state implements ApplicationListener, InputProcessor {
 
+    private Random rand;
     private Jumper jumper;
+    //private Platforms platform;
+    private Array<Platforms> platforms;
+    private int platformCount = 3;
 
     public gameplay(GameStateManager gsm) {
         super(gsm);
+        rand = new Random();
         jumper = new Jumper();
+        platforms = new Array<Platforms>();
+        cam.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+
+        for(int i = 0; i < platformCount; i++) {
+            platforms.add(new Platforms(jumper.getPosition().x + i*rand.nextInt(500), jumper.getPosition().y + i * rand.nextInt(500)));
+        }
     }
 
     @Override
@@ -33,16 +48,31 @@ public class gameplay extends state implements ApplicationListener, InputProcess
 
     @Override
     public void update(float dt) {
+        //System.out.println(cam.position.y);
+        cam.position.y = jumper.getPosition().y;
         handleInput();
         touchDown(Gdx.input.getX(), Gdx.input.getY(), 0, 0);
         touchUp(Gdx.input.getX(), Gdx.input.getY(), 0, 0);
         jumper.update(Gdx.graphics.getDeltaTime());
+
+        for(Platforms platform: platforms) {
+            if (cam.position.y - ((cam.viewportHeight / 2) + Platforms.cloud_HEIGHT) > platform.getCloudPos().y) {
+                platform.reposition(cam.position.y);
+            }
+        }
+
+        cam.update();
+
     }
 
     @Override
     public void render(SpriteBatch sb) {
+        sb.setProjectionMatrix(cam.combined);
         sb.begin();
         sb.draw(jumper.getJumper(), jumper.getPosition().x, jumper.getPosition().y, jumper.getSpriteSize(), Math.round(jumper.getSpriteSize() * 1.34));
+        for(Platforms platform: platforms) {
+            sb.draw(platform.getClouds(), platform.getCloudPos().x, platform.getCloudPos().y);
+        }
         sb.end();
     }
 

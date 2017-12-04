@@ -20,7 +20,7 @@ public class Jumper {
     private final int sideSpeed = 300;
 
 
-    private final int spriteSize = 200;
+    private final int spriteSize = 150;
     private Vector2 velocity;
     private Vector2 position;
     private Texture jumper;

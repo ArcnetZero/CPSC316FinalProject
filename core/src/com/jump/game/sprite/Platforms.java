@@ -11,20 +11,32 @@ import java.util.Random;
 
 public class Platforms {
 
-    private Texture Clouds;
+    private Texture clouds;
     private Vector2 cloudPos;
+
+    public static final int cloud_WIDTH = 439;
+    public final static int cloud_HEIGHT = 158;
     private Random rand;
-    private int xFlunc = 700;
+    private int Flunc = 500;
 
-    public Platforms(float x) {
+
+    public Platforms(float x, float y) {
         rand = new Random();
-        Clouds = new Texture("cloud.png");
-        cloudPos = new Vector2(x, rand.nextInt(xFlunc));
-
+        clouds = new Texture("cloud.png");
+        cloudPos = new Vector2(x,y);
 
     }
 
+    public void reposition(float camY) {
+        cloudPos.set(rand.nextInt(Flunc), camY + Gdx.graphics.getHeight()/2);
+    }
 
 
+    public Texture getClouds() {
+        return clouds;
+    }
 
+    public Vector2 getCloudPos() {
+        return cloudPos;
+    }
 }
