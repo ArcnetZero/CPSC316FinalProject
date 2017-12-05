@@ -16,6 +16,7 @@ import com.jump.game.sprite.Platforms;
 import com.jump.game.sprite.Jumper;
 import com.badlogic.gdx.utils.Array;
 import java.util.Random;
+import java.util.Arrays;
 
 import java.util.ArrayList;
 
@@ -93,6 +94,7 @@ public class gameplay extends state implements InputProcessor {
                     jumper.jump();
                     scoreCount++;
                     score = "score:" + scoreCount;
+                    platform.KillCloud();
                 }
             }
             if(killplatform.collide(jumper.getJumperBox()) && jumper.getVelocity().y < 0){
