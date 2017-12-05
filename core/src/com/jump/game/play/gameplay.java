@@ -31,6 +31,9 @@ public class gameplay extends state implements InputProcessor {
     private KillPlatform killplatform;
     private int platformCount = 3;
     private Rectangle intersection;
+    private float screenTracker;
+    private int screenWidth = Gdx.graphics.getWidth();
+    private int screenHeight = Gdx.graphics.getHeight();
 
     public gameplay(GameStateManager gsm) {
         super(gsm);
@@ -40,11 +43,14 @@ public class gameplay extends state implements InputProcessor {
         platforms = new Array<Platforms>();
         killplatform = new KillPlatform();
         intersection = new Rectangle();
-        cam.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        screenTracker = 0;
+        cam.setToOrtho(false, screenWidth, screenHeight);
 
-        for(int i = 0; i < platformCount; i++) {
-            platforms.add(new Platforms(jumper.getPosition().x + i*rand.nextInt(Gdx.graphics.getWidth()), jumper.getPosition().y + i * rand.nextInt(Gdx.graphics.getWidth()) - 10));
-        }
+        platforms.add(new Platforms(jumper.getPosition().x, jumper.getPosition().y - 10));
+        platforms.add(new Platforms(rand.nextInt(screenWidth-Platforms.cloud_WIDTH), randomRange(0,screenHeight/3)));
+        platforms.add(new Platforms(rand.nextInt(screenWidth-Platforms.cloud_WIDTH), randomRange(screenHeight/3,2*screenHeight/3)));
+        platforms.add(new Platforms(rand.nextInt(screenWidth-Platforms.cloud_WIDTH), randomRange(2*screenHeight/3,screenHeight)));
+
         killplatform.killPlatform();
     }
 
@@ -67,8 +73,9 @@ public class gameplay extends state implements InputProcessor {
 
 
         for (Platforms platform : platforms) {
-            if (cam.position.y - ((cam.viewportHeight / 2) + Platforms.cloud_HEIGHT) > platform.getCloudPos().y) {
-                platform.reposition(cam.position.y);
+            if (cam.position.y > screenTracker) {
+                screenTracker = cam.position.y + screenHeight/4;
+                platforms.add(new Platforms(rand.nextInt(screenWidth-Platforms.cloud_WIDTH), cam.position.y + randomRange(screenHeight,screenHeight/3)));
             }
             if(cam.position.y - cam.viewportHeight > killplatform.getCloudPos().y){
                 killplatform.repositionKillBox(cam.position.y-cam.viewportHeight/2);
@@ -126,7 +133,7 @@ public class gameplay extends state implements InputProcessor {
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-        if (Gdx.input.getX() >= Gdx.graphics.getWidth() / 2) {
+        if (Gdx.input.getX() >= screenWidth / 2) {
             jumper.setMoveLeft(true);
         } else {
 
@@ -137,7 +144,7 @@ public class gameplay extends state implements InputProcessor {
 
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-        if (Gdx.input.getX() >= Gdx.graphics.getWidth() / 2) {
+        if (Gdx.input.getX() >= screenWidth / 2) {
             jumper.setMoveLeft(false);
         } else {
             jumper.setMoveRight(false);
@@ -158,5 +165,14 @@ public class gameplay extends state implements InputProcessor {
     @Override
     public boolean scrolled(int amount) {
         return false;
+    }
+    private static int randomRange(int min, int max) {
+
+        if (min >= max) {
+            throw new IllegalArgumentException("max must be greater than min");
+        }
+
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
     }
 }

@@ -17,9 +17,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
 public class Jumper {
 
-    private final int Gravity = -100;
-    private final int sideSpeed = 300;
-    private final int jumpVelocity = 45000;
+    private final int Gravity = -350;
+    private final int sideSpeed = 500;
+    private final int jumpVelocity = 80000;
 
 
     private final int spriteSize = 150;

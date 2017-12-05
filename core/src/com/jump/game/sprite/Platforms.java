@@ -31,7 +31,7 @@ public class Platforms {
     }
 
     public void reposition(float camY) {
-        cloudPos.set(rand.nextInt(Flunc), camY + Gdx.graphics.getHeight()/2);
+        cloudPos.set(rand.nextInt(Gdx.graphics.getWidth()-347), camY + Gdx.graphics.getHeight()/2);
         cloudBox.setPosition(cloudPos.x, cloudPos.y);
     }
 
