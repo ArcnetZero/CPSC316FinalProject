@@ -6,7 +6,7 @@
     density="420dpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1512416240705"
+    timestamp="1512506005037"
     token="4725695694250626196"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -25,7 +25,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1512414445143"
+        timestamp="1512505474248"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/split-apk/debug/slices/slice_7.apk"
@@ -66,23 +66,7 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1512416108875"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/split-apk/debug/slices/slice_4.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1512416221862"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/split-apk/debug/slices/slice_7.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1512416240705"
+        timestamp="1512506005037"
         verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

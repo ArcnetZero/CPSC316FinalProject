@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -25,15 +26,15 @@ public class Jumper {
     private Vector2 position;
     private Texture jumper;
     private Sprite sprite;
+    private Rectangle jumperBox;
     private boolean moveLeft;
     private boolean moveRight;
     //private Image jumper;
 
-
-    public Jumper() {
+    public Jumper(float x, float y) {
         jumper = new Texture("jumperDude.png");
         sprite = new Sprite(jumper);
-        //jumper = new Image(new Texture(Gdx.files.internal("jumperDude.png")));
+        jumperBox = new Rectangle(x, y, spriteSize, Math.round(getSpriteSize() * 1.34));
         velocity = new Vector2(0, 0);
         position = new Vector2(0, 0);
     }
@@ -61,6 +62,7 @@ public class Jumper {
         velocity.add(0, Gravity);
         velocity.scl(dt);
         position.add(velocity.x, velocity.y * dt);
+        jumperBox.setPosition(position.x, position.y);
         velocity.scl(1/dt);
     }
 
@@ -85,31 +87,37 @@ public class Jumper {
     }
 
     public void jump(){
-        velocity.y = 18000;
-    }
 
-    public void jumpLeft(){
-        velocity.x =  -50;
-    }
-
-    public void jumpRight() {
-        velocity.x = 50;
+        velocity.y = 45000;
     }
 
     public Vector2 getPosition(){
+
         return position;
     }
 
     public Sprite getJumper(){
+
         return sprite;
     }
 
     public Texture getJumperTex() {
+
         return jumper;
     }
 
     public int getSpriteSize() {
+
         return spriteSize;
     }
 
+    public Rectangle getJumperBox() {
+
+        return jumperBox;
+    }
+
+    public Vector2 getVelocity() {
+
+        return velocity;
+    }
 }

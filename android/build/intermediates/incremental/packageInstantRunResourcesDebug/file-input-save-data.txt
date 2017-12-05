@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Dec 04 12:39:18 CST 2017
+#Mon Dec 04 19:06:01 CST 2017
 2.base=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/assets/debug
 5.file=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/res/resources-debug.ap_/AndroidManifest.xml
 5.set=ANDROID_RESOURCE

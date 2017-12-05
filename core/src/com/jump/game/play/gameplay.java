@@ -6,6 +6,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Intersector;
+import com.badlogic.gdx.math.Rectangle;
 import com.jump.game.JumpGame;
 import com.jump.game.play.*;
 import com.jump.game.sprite.Platforms;
@@ -19,7 +21,7 @@ import java.util.ArrayList;
  * Created by Ryan.T on 11/21/17.
  */
 
-public class gameplay extends state implements ApplicationListener, InputProcessor {
+public class gameplay extends state implements InputProcessor {
 
     private Random rand;
     private Jumper jumper;
@@ -29,46 +31,58 @@ public class gameplay extends state implements ApplicationListener, InputProcess
 
     public gameplay(GameStateManager gsm) {
         super(gsm);
+
         rand = new Random();
-        jumper = new Jumper();
+        jumper = new Jumper(0,0);
         platforms = new Array<Platforms>();
         cam.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
         for(int i = 0; i < platformCount; i++) {
-            platforms.add(new Platforms(jumper.getPosition().x + i*rand.nextInt(500), jumper.getPosition().y + i * rand.nextInt(500)));
+            platforms.add(new Platforms(jumper.getPosition().x + i*rand.nextInt(Gdx.graphics.getWidth()), jumper.getPosition().y + i * rand.nextInt(Gdx.graphics.getWidth())));
         }
+
+    }
+
+    public boolean intersectRectangle(Rectangle player, Rectangle platform, Rectangle intersection) {
+
+        return true;
     }
 
     @Override
     public void handleInput() {
         if (Gdx.input.justTouched()) {
-            jumper.jump();
+            //jumper.jump();
         }
     }
 
     @Override
     public void update(float dt) {
-        //System.out.println(cam.position.y);
+        //System.out.println(jumper.getJumperBox().x);
         cam.position.y = jumper.getPosition().y;
         handleInput();
         touchDown(Gdx.input.getX(), Gdx.input.getY(), 0, 0);
         touchUp(Gdx.input.getX(), Gdx.input.getY(), 0, 0);
         jumper.update(Gdx.graphics.getDeltaTime());
 
-        for(Platforms platform: platforms) {
+        for (Platforms platform : platforms) {
             if (cam.position.y - ((cam.viewportHeight / 2) + Platforms.cloud_HEIGHT) > platform.getCloudPos().y) {
                 platform.reposition(cam.position.y);
             }
+
+            if(platform.collide(jumper.getJumperBox()) && jumper.getVelocity().y < 0) {
+                jumper.jump();
+            }
         }
-
         cam.update();
-
     }
+
 
     @Override
     public void render(SpriteBatch sb) {
         sb.setProjectionMatrix(cam.combined);
+
         sb.begin();
+
         sb.draw(jumper.getJumper(), jumper.getPosition().x, jumper.getPosition().y, jumper.getSpriteSize(), Math.round(jumper.getSpriteSize() * 1.34));
         for(Platforms platform: platforms) {
             sb.draw(platform.getClouds(), platform.getCloudPos().x, platform.getCloudPos().y);
@@ -77,30 +91,11 @@ public class gameplay extends state implements ApplicationListener, InputProcess
     }
 
     @Override
-    public void create() {
-    }
-
-    @Override
-    public void resize(int width, int height) {
-    }
-
-    @Override
-    public void render() {
-
-    }
-
-    @Override
-    public void pause() {
-
-    }
-
-    @Override
-    public void resume() {
-
-    }
-
-    @Override
     public void dispose() {
+        for(Platforms platform: platforms) {
+            platform.getClouds().dispose();
+        }
+        jumper.getJumperTex().dispose();
 
     }
 
@@ -124,6 +119,7 @@ public class gameplay extends state implements ApplicationListener, InputProcess
         if (Gdx.input.getX() >= Gdx.graphics.getWidth() / 2) {
             jumper.setMoveLeft(true);
         } else {
+
             jumper.setMoveRight(true);
         }
         return true;
