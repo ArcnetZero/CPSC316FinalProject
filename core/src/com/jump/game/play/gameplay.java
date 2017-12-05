@@ -28,6 +28,7 @@ public class gameplay extends state implements InputProcessor {
     //private Platforms platform;
     private Array<Platforms> platforms;
     private int platformCount = 3;
+    private Rectangle intersection;
 
     public gameplay(GameStateManager gsm) {
         super(gsm);
@@ -35,23 +36,20 @@ public class gameplay extends state implements InputProcessor {
         rand = new Random();
         jumper = new Jumper(0,0);
         platforms = new Array<Platforms>();
+        intersection = new Rectangle();
         cam.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
         for(int i = 0; i < platformCount; i++) {
-            platforms.add(new Platforms(jumper.getPosition().x + i*rand.nextInt(Gdx.graphics.getWidth()), jumper.getPosition().y + i * rand.nextInt(Gdx.graphics.getWidth())));
+            platforms.add(new Platforms(jumper.getPosition().x + i*rand.nextInt(Gdx.graphics.getWidth()), jumper.getPosition().y + i * rand.nextInt(Gdx.graphics.getWidth()) - 10));
         }
 
     }
 
-    public boolean intersectRectangle(Rectangle player, Rectangle platform, Rectangle intersection) {
-
-        return true;
-    }
 
     @Override
     public void handleInput() {
         if (Gdx.input.justTouched()) {
-            //jumper.jump();
+            //Do nothing
         }
     }
 
@@ -64,15 +62,24 @@ public class gameplay extends state implements InputProcessor {
         touchUp(Gdx.input.getX(), Gdx.input.getY(), 0, 0);
         jumper.update(Gdx.graphics.getDeltaTime());
 
+
         for (Platforms platform : platforms) {
             if (cam.position.y - ((cam.viewportHeight / 2) + Platforms.cloud_HEIGHT) > platform.getCloudPos().y) {
                 platform.reposition(cam.position.y);
             }
 
-            if(platform.collide(jumper.getJumperBox()) && jumper.getVelocity().y < 0) {
-                jumper.jump();
+
+            if(Intersector.intersectRectangles(jumper.getJumperBox(), platform.getCloudBox(), intersection ))
+            {
+                if(intersection.y > platform.getCloudBox().y && jumper.getVelocity().y < 0)
+                    jumper.jump();
             }
+
         }
+
+
+
+
         cam.update();
     }
 
