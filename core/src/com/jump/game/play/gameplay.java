@@ -5,6 +5,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.*;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
@@ -35,6 +36,10 @@ public class gameplay extends state implements InputProcessor {
     private int screenWidth = Gdx.graphics.getWidth();
     private int screenHeight = Gdx.graphics.getHeight();
 
+    private int scoreCount;
+    private String score;
+    private BitmapFont yourbitmap;
+
     public gameplay(GameStateManager gsm) {
         super(gsm);
 
@@ -43,13 +48,16 @@ public class gameplay extends state implements InputProcessor {
         platforms = new Array<Platforms>();
         killplatform = new KillPlatform();
         intersection = new Rectangle();
+        scoreCount = 0;
+        score = "";
+        yourbitmap = new BitmapFont();
         screenTracker = 0;
         cam.setToOrtho(false, screenWidth, screenHeight);
 
         platforms.add(new Platforms(jumper.getPosition().x, jumper.getPosition().y - 10));
-        platforms.add(new Platforms(rand.nextInt(screenWidth-Platforms.cloud_WIDTH), randomRange(0,screenHeight/3)));
-        platforms.add(new Platforms(rand.nextInt(screenWidth-Platforms.cloud_WIDTH), randomRange(screenHeight/3,2*screenHeight/3)));
-        platforms.add(new Platforms(rand.nextInt(screenWidth-Platforms.cloud_WIDTH), randomRange(2*screenHeight/3,screenHeight)));
+        platforms.add(new Platforms(randomRange(0,screenWidth-Platforms.cloud_WIDTH), randomRange(screenHeight/5,screenHeight/3)));
+        platforms.add(new Platforms(randomRange(0,screenWidth-Platforms.cloud_WIDTH), randomRange(screenHeight/3,2*screenHeight/3)));
+        platforms.add(new Platforms(randomRange(0,screenWidth-Platforms.cloud_WIDTH), randomRange(2*screenHeight/3,screenHeight)));
 
         killplatform.killPlatform();
     }
@@ -75,7 +83,7 @@ public class gameplay extends state implements InputProcessor {
         for (Platforms platform : platforms) {
             if (cam.position.y > screenTracker) {
                 screenTracker = cam.position.y + screenHeight/4;
-                platforms.add(new Platforms(rand.nextInt(screenWidth-Platforms.cloud_WIDTH), cam.position.y + randomRange(screenHeight,screenHeight/3)));
+                platforms.add(new Platforms(randomRange(0,screenWidth-Platforms.cloud_WIDTH), cam.position.y + randomRange(screenHeight,4*screenHeight/3)));
             }
             if(cam.position.y - cam.viewportHeight > killplatform.getCloudPos().y){
                 killplatform.repositionKillBox(cam.position.y-cam.viewportHeight/2);
@@ -83,6 +91,8 @@ public class gameplay extends state implements InputProcessor {
             if(Intersector.intersectRectangles(jumper.getJumperBox(), platform.getCloudBox(),intersection)){
                 if(intersection.y > platform.getCloudBox().y && jumper.getVelocity().y < 0){
                     jumper.jump();
+                    scoreCount++;
+                    score = "score:" + scoreCount;
                 }
             }
             if(killplatform.collide(jumper.getJumperBox()) && jumper.getVelocity().y < 0){
@@ -98,7 +108,9 @@ public class gameplay extends state implements InputProcessor {
         sb.setProjectionMatrix(cam.combined);
 
         sb.begin();
-
+        yourbitmap.setColor(Color.BLUE);
+        yourbitmap.getData().setScale(3f);
+        yourbitmap.draw(sb, score, cam.position.x + screenWidth / 2 - 180, cam.position.y + screenHeight / 2 - 30);
         sb.draw(jumper.getJumper(), jumper.getPosition().x, jumper.getPosition().y, jumper.getSpriteSize(), Math.round(jumper.getSpriteSize() * 1.34));
         for(Platforms platform: platforms) {
             sb.draw(platform.getClouds(), platform.getCloudPos().x, platform.getCloudPos().y);
@@ -167,9 +179,10 @@ public class gameplay extends state implements InputProcessor {
         return false;
     }
     private static int randomRange(int min, int max) {
-
         if (min >= max) {
-            throw new IllegalArgumentException("max must be greater than min");
+            int temp = max;
+            max = min;
+            min = temp;
         }
 
         Random r = new Random();
