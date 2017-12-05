@@ -19,6 +19,7 @@ public class Jumper {
 
     private final int Gravity = -100;
     private final int sideSpeed = 300;
+    private final int jumpVelocity = 45000;
 
 
     private final int spriteSize = 150;
@@ -88,7 +89,7 @@ public class Jumper {
 
     public void jump(){
 
-        velocity.y = 45000;
+        velocity.y = jumpVelocity;
     }
 
     public Vector2 getPosition(){

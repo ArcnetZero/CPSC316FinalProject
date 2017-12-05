@@ -1,44 +1,42 @@
 package com.jump.game.sprite;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import java.util.Random;
 
 /**
- * Created by Ryan.T on 11/29/17.
+ * Created by Brenden Carney on 12/5/2017.
  */
 
-public class Platforms {
-
+public class KillPlatform {
     private Texture clouds;
     private Vector2 cloudPos;
     private Rectangle cloudBox;
-
-    public static final int cloud_WIDTH = 347;
-    public final static int cloud_HEIGHT = 130;
-    private Random rand;
-    private int Flunc = 500;
+    private Pixmap pixmap;
 
 
-    public Platforms(float x, float y) {
-        cloudBox = new Rectangle(x, y, cloud_WIDTH, cloud_HEIGHT);
-        rand = new Random();
-        clouds = new Texture("cloud.png");
-        cloudPos = new Vector2(x,y);
+    public void killPlatform() {
+        pixmap = new Pixmap(Gdx.graphics.getWidth(),20, Pixmap.Format.RGBA8888);
+        pixmap.setColor(Color.WHITE);
+        pixmap.fill();
+
+        cloudBox = new Rectangle(0, 0, Gdx.graphics.getWidth(),20);
+        clouds = new Texture(pixmap);
+        cloudPos = new Vector2(0,0);
     }
 
-    public void reposition(float camY) {
-        cloudPos.set(rand.nextInt(Flunc), camY + Gdx.graphics.getHeight()/2);
+    public void repositionKillBox(float camY){
+        cloudPos.set(0, camY);
         cloudBox.setPosition(cloudPos.x, cloudPos.y);
     }
 
     public boolean collide(Rectangle player) {
         return player.overlaps(cloudBox);
     }
-
 
     public Texture getClouds() {
         return clouds;

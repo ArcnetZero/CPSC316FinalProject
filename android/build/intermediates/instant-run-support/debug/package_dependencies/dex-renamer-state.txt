@@ -1,10 +1,10 @@
-#Sun Dec 03 18:23:31 CST 2017
+#Tue Dec 05 14:48:46 CST 2017
 renamed.2=classes.dex
 renamed.1=classes3.dex
 renamed.0=classes2.dex
-base.2=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/transforms/dex/debug/folders/1000/10/gdx-1.9.7_aef8a3a85f1d19ae5f9ca0badab2850533655dcd
-base.1=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/transforms/dex/debug/folders/1000/10/gdx-box2d-1.9.7_13051aecf7cf9ae71ad69548d4f3927d35e73955
-base.0=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/transforms/dex/debug/folders/1000/10/gdx-backend-android-1.9.7_952d0c150ac705c02023a50bd5ada3c3d6a6daad
-file.2=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/transforms/dex/debug/folders/1000/10/gdx-1.9.7_aef8a3a85f1d19ae5f9ca0badab2850533655dcd/classes.dex
-file.1=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/transforms/dex/debug/folders/1000/10/gdx-box2d-1.9.7_13051aecf7cf9ae71ad69548d4f3927d35e73955/classes.dex
-file.0=/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/transforms/dex/debug/folders/1000/10/gdx-backend-android-1.9.7_952d0c150ac705c02023a50bd5ada3c3d6a6daad/classes.dex
+base.2=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\gdx-1.9.7_75383195cab13133a077536e81251e79235691bc
+base.1=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\gdx-box2d-1.9.7_be493b71e95da55c0a78560de1126c1d13a7aeae
+base.0=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\gdx-backend-android-1.9.7_0a2b7ccd2db40710586c69bb260bd52be0bc9e0a
+file.2=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\gdx-1.9.7_75383195cab13133a077536e81251e79235691bc\\classes.dex
+file.1=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\gdx-box2d-1.9.7_be493b71e95da55c0a78560de1126c1d13a7aeae\\classes.dex
+file.0=C\:\\Users\\Brenden Carney\\AndroidStudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\gdx-backend-android-1.9.7_0a2b7ccd2db40710586c69bb260bd52be0bc9e0a\\classes.dex

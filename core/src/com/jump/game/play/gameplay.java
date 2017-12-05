@@ -10,6 +10,7 @@ import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 import com.jump.game.JumpGame;
 import com.jump.game.play.*;
+import com.jump.game.sprite.KillPlatform;
 import com.jump.game.sprite.Platforms;
 import com.jump.game.sprite.Jumper;
 import com.badlogic.gdx.utils.Array;
@@ -27,6 +28,7 @@ public class gameplay extends state implements InputProcessor {
     private Jumper jumper;
     //private Platforms platform;
     private Array<Platforms> platforms;
+    private KillPlatform killplatform;
     private int platformCount = 3;
     private Rectangle intersection;
 
@@ -36,13 +38,14 @@ public class gameplay extends state implements InputProcessor {
         rand = new Random();
         jumper = new Jumper(0,0);
         platforms = new Array<Platforms>();
+        killplatform = new KillPlatform();
         intersection = new Rectangle();
         cam.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
         for(int i = 0; i < platformCount; i++) {
             platforms.add(new Platforms(jumper.getPosition().x + i*rand.nextInt(Gdx.graphics.getWidth()), jumper.getPosition().y + i * rand.nextInt(Gdx.graphics.getWidth()) - 10));
         }
-
+        killplatform.killPlatform();
     }
 
 
@@ -67,19 +70,18 @@ public class gameplay extends state implements InputProcessor {
             if (cam.position.y - ((cam.viewportHeight / 2) + Platforms.cloud_HEIGHT) > platform.getCloudPos().y) {
                 platform.reposition(cam.position.y);
             }
-
-
-            if(Intersector.intersectRectangles(jumper.getJumperBox(), platform.getCloudBox(), intersection ))
-            {
-                if(intersection.y > platform.getCloudBox().y && jumper.getVelocity().y < 0)
-                    jumper.jump();
+            if(cam.position.y - cam.viewportHeight > killplatform.getCloudPos().y){
+                killplatform.repositionKillBox(cam.position.y-cam.viewportHeight/2);
             }
-
+            if(Intersector.intersectRectangles(jumper.getJumperBox(), platform.getCloudBox(),intersection)){
+                if(intersection.y > platform.getCloudBox().y && jumper.getVelocity().y < 0){
+                    jumper.jump();
+                }
+            }
+            if(killplatform.collide(jumper.getJumperBox()) && jumper.getVelocity().y < 0){
+                gsm.set(new gameplay(gsm));
+            }
         }
-
-
-
-
         cam.update();
     }
 
@@ -94,6 +96,7 @@ public class gameplay extends state implements InputProcessor {
         for(Platforms platform: platforms) {
             sb.draw(platform.getClouds(), platform.getCloudPos().x, platform.getCloudPos().y);
         }
+        sb.draw(killplatform.getClouds(),killplatform.getCloudPos().x,killplatform.getCloudPos().y ,0, 0);
         sb.end();
     }
 
