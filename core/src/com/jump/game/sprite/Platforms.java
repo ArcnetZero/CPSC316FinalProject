@@ -54,12 +54,15 @@ public class Platforms {
     public Rectangle getCloudBox() {
         return cloudBox;
     }
-    public void KillCloud(){
-        cloudBox.setSize(0,0);
 
+    public void KillCloud(){
+        cloudBox.setSize(0, 0);
         pixmap = new Pixmap(cloud_WIDTH,cloud_HEIGHT, Pixmap.Format.RGBA8888);
         pixmap.setColor((float)60/255,(float)181/255,0f,0f);
         pixmap.fill();
         clouds = new Texture(pixmap);
+
+
     }
+
 }

@@ -26,12 +26,10 @@ import java.util.ArrayList;
 
 public class gameplay extends state implements InputProcessor {
 
-    private Random rand;
     private Jumper jumper;
-    //private Platforms platform;
+    private Texture background;
     private Array<Platforms> platforms;
     private KillPlatform killplatform;
-    private int platformCount = 3;
     private Rectangle intersection;
     private float screenTracker;
     private int screenWidth = Gdx.graphics.getWidth();
@@ -43,8 +41,7 @@ public class gameplay extends state implements InputProcessor {
 
     public gameplay(GameStateManager gsm) {
         super(gsm);
-
-        rand = new Random();
+        background = new Texture("someRandomBackground.png");
         jumper = new Jumper(0,0);
         platforms = new Array<Platforms>();
         killplatform = new KillPlatform();
@@ -55,12 +52,14 @@ public class gameplay extends state implements InputProcessor {
         screenTracker = 0;
         cam.setToOrtho(false, screenWidth, screenHeight);
 
-        platforms.add(new Platforms(jumper.getPosition().x, jumper.getPosition().y - 10));
+        platforms.add(new Platforms(jumper.getPosition().x, jumper.getPosition().y - 20));
         platforms.add(new Platforms(randomRange(0,screenWidth-Platforms.cloud_WIDTH), randomRange(screenHeight/5,screenHeight/3)));
         platforms.add(new Platforms(randomRange(0,screenWidth-Platforms.cloud_WIDTH), randomRange(screenHeight/3,2*screenHeight/3)));
         platforms.add(new Platforms(randomRange(0,screenWidth-Platforms.cloud_WIDTH), randomRange(2*screenHeight/3,screenHeight)));
 
         killplatform.killPlatform();
+
+
     }
 
 
@@ -81,6 +80,7 @@ public class gameplay extends state implements InputProcessor {
         jumper.update(Gdx.graphics.getDeltaTime());
 
 
+
         for (Platforms platform : platforms) {
             if (cam.position.y > screenTracker) {
                 screenTracker = cam.position.y + screenHeight/4;
@@ -92,16 +92,22 @@ public class gameplay extends state implements InputProcessor {
             if(Intersector.intersectRectangles(jumper.getJumperBox(), platform.getCloudBox(),intersection)){
                 if(intersection.y > platform.getCloudBox().y && jumper.getVelocity().y < 0){
                     jumper.jump();
+                    jumper.getJumper().flip(true, false);
                     scoreCount++;
                     score = "score:" + scoreCount;
                     platform.KillCloud();
+
                 }
             }
             if(killplatform.collide(jumper.getJumperBox()) && jumper.getVelocity().y < 0){
                 gsm.set(new gameplay(gsm));
+                killplatform.repositionKillBox(cam.position.y-cam.viewportHeight/2);
+
             }
         }
         cam.update();
+
+
     }
 
 
@@ -110,9 +116,11 @@ public class gameplay extends state implements InputProcessor {
         sb.setProjectionMatrix(cam.combined);
 
         sb.begin();
-        yourbitmap.setColor(Color.BLUE);
+        sb.draw(background,  cam.position.x - cam.viewportWidth / 2,  cam.position.y - cam.viewportHeight / 2, cam.viewportWidth, cam.viewportHeight);
+        yourbitmap.setColor(Color.RED);
         yourbitmap.getData().setScale(3f);
-        yourbitmap.draw(sb, score, cam.position.x + screenWidth / 2 - 180, cam.position.y + screenHeight / 2 - 30);
+
+        yourbitmap.draw(sb, score, cam.position.x  + screenWidth / 2 - 180, cam.position.y + screenHeight / 2 - 30);
         sb.draw(jumper.getJumper(), jumper.getPosition().x, jumper.getPosition().y, jumper.getSpriteSize(), Math.round(jumper.getSpriteSize() * 1.34));
         for(Platforms platform: platforms) {
             sb.draw(platform.getClouds(), platform.getCloudPos().x, platform.getCloudPos().y);
@@ -127,6 +135,7 @@ public class gameplay extends state implements InputProcessor {
             platform.getClouds().dispose();
         }
         jumper.getJumperTex().dispose();
+        jumper.getSwoosh().dispose();
 
     }
 
@@ -147,10 +156,9 @@ public class gameplay extends state implements InputProcessor {
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-        if (Gdx.input.getX() >= screenWidth / 2) {
+        if (Gdx.input.getX() >= screenWidth / 2 ) {
             jumper.setMoveLeft(true);
         } else {
-
             jumper.setMoveRight(true);
         }
         return true;
@@ -180,6 +188,7 @@ public class gameplay extends state implements InputProcessor {
     public boolean scrolled(int amount) {
         return false;
     }
+
     private static int randomRange(int min, int max) {
         if (min >= max) {
             int temp = max;
@@ -190,4 +199,6 @@ public class gameplay extends state implements InputProcessor {
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
     }
-}
+
+    }
+

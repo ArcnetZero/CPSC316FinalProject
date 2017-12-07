@@ -10,12 +10,15 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.audio.Sound;
 
 /**
  * Created by Ryan.T on 11/21/17.
  */
 
 public class Jumper {
+
+    private Sound swoosh;
 
     private final int Gravity = -350;
     private final int sideSpeed = 500;
@@ -38,6 +41,7 @@ public class Jumper {
         jumperBox = new Rectangle(x, y, spriteSize, Math.round(getSpriteSize() * 1.34));
         velocity = new Vector2(0, 0);
         position = new Vector2(0, 0);
+        swoosh = Gdx.audio.newSound(Gdx.files.internal("swoosh.mp3"));
     }
 
     public void update(float dt) {
@@ -90,6 +94,7 @@ public class Jumper {
     public void jump(){
 
         velocity.y = jumpVelocity;
+        swoosh.play();
     }
 
     public Vector2 getPosition(){
@@ -120,5 +125,9 @@ public class Jumper {
     public Vector2 getVelocity() {
 
         return velocity;
+    }
+
+    public Sound getSwoosh() {
+        return swoosh;
     }
 }
