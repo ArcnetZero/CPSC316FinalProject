@@ -21,7 +21,6 @@ public class Jumper {
     private final int sideSpeed = 500;
     private final int jumpVelocity = 80000;
 
-
     private final int spriteSize = 150;
     private Vector2 velocity;
     private Vector2 position;
@@ -30,6 +29,7 @@ public class Jumper {
     private Rectangle jumperBox;
     private boolean moveLeft;
     private boolean moveRight;
+    private boolean moveStop = false;
     //private Image jumper;
 
     public Jumper(float x, float y) {
@@ -37,54 +37,60 @@ public class Jumper {
         sprite = new Sprite(jumper);
         jumperBox = new Rectangle(x, y, spriteSize, Math.round(getSpriteSize() * 1.34));
         velocity = new Vector2(0, 0);
-        position = new Vector2(0, 0);
+        position = new Vector2((Gdx.graphics.getWidth()-spriteSize)/2, 100);
     }
 
     public void update(float dt) {
+        System.out.println(moveLeft);
+        System.out.println(moveRight);
+        System.out.println(moveStop);
         if(moveLeft){
+            sprite.setFlip(true, false);
             if(position.x<=0){
                 position.x=0;
             }
             else {
-                position.x -= sideSpeed * dt;
+                if(position.x - Gdx.input.getX() < sideSpeed/4)
+                    position.x -= (position.x - Gdx.input.getX())*dt;
+                else
+                    position.x -= sideSpeed*dt;
             }
         }
-        if(moveRight){
+        else if(moveRight){
+            sprite.setFlip(false,false);
             if(position.x>=(Gdx.graphics.getWidth()-spriteSize)){
                 position.x=(Gdx.graphics.getWidth()-spriteSize);
             }
             else {
-                position.x += sideSpeed * dt;
+                if(Gdx.input.getX()- position.x < sideSpeed/4)
+                    position.x += (Gdx.input.getX()- position.x)*dt;
+                else
+                    position.x += sideSpeed*dt;
             }
+        }
+        else if(moveStop){
+            velocity.x = 0;
         }
         if (position.y > 0) {
             velocity.add(0, Gravity);
         }
         velocity.add(0, Gravity);
         velocity.scl(dt);
-        position.add(velocity.x, velocity.y * dt);
+        position.add(velocity.x*dt, velocity.y * dt);
         jumperBox.setPosition(position.x, position.y);
         velocity.scl(1/dt);
     }
 
     public void setMoveLeft(boolean bool){
         moveLeft = bool;
-        if(bool){
-            moveRight = false;
-        }
-        else{
-            moveRight = true;
-        }
     }
 
     public void setMoveRight(boolean bool){
         moveRight = bool;
-        if(bool){
-            moveLeft = false;
-        }
-        else{
-            moveLeft = true;
-        }
+    }
+
+    public void setMoveStop(boolean bool){
+        moveStop = bool;
     }
 
     public void jump(){
@@ -95,6 +101,10 @@ public class Jumper {
     public Vector2 getPosition(){
 
         return position;
+    }
+    public float getXPosition(){
+
+        return position.x;
     }
 
     public Sprite getJumper(){

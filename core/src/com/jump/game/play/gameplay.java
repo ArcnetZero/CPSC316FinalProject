@@ -55,7 +55,7 @@ public class gameplay extends state implements InputProcessor {
         screenTracker = 0;
         cam.setToOrtho(false, screenWidth, screenHeight);
 
-        platforms.add(new Platforms(jumper.getPosition().x, jumper.getPosition().y - 10));
+        platforms.add(new Platforms(jumper.getPosition().x+jumper.getSpriteSize()/2-Platforms.cloud_WIDTH/2, jumper.getPosition().y - 100));
         platforms.add(new Platforms(randomRange(0,screenWidth-Platforms.cloud_WIDTH), randomRange(screenHeight/5,screenHeight/3)));
         platforms.add(new Platforms(randomRange(0,screenWidth-Platforms.cloud_WIDTH), randomRange(screenHeight/3,2*screenHeight/3)));
         platforms.add(new Platforms(randomRange(0,screenWidth-Platforms.cloud_WIDTH), randomRange(2*screenHeight/3,screenHeight)));
@@ -73,7 +73,6 @@ public class gameplay extends state implements InputProcessor {
 
     @Override
     public void update(float dt) {
-        //System.out.println(jumper.getJumperBox().x);
         cam.position.y = jumper.getPosition().y;
         handleInput();
         touchDown(Gdx.input.getX(), Gdx.input.getY(), 0, 0);
@@ -127,7 +126,6 @@ public class gameplay extends state implements InputProcessor {
             platform.getClouds().dispose();
         }
         jumper.getJumperTex().dispose();
-
     }
 
     @Override
@@ -147,23 +145,32 @@ public class gameplay extends state implements InputProcessor {
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-        if (Gdx.input.getX() >= screenWidth / 2) {
+        System.out.println(screenX);
+        System.out.println(jumper.getXPosition());
+        if(screenX < jumper.getXPosition()+jumper.getSpriteSize()/2) {
+            System.out.println("IS MOVING LEFT");
             jumper.setMoveLeft(true);
-        } else {
-
+            jumper.setMoveRight(false);
+            jumper.setMoveStop(false);
+        }
+        else if(screenX > jumper.getXPosition()+jumper.getSpriteSize()/2){
+            System.out.println("IS MOVING RIGHT");
+            jumper.setMoveLeft(false);
             jumper.setMoveRight(true);
+            jumper.setMoveStop(false);
+        }
+        else{
+            System.out.println("IS MOVING STOPPED");
+            jumper.setMoveLeft(false);
+            jumper.setMoveRight(false);
+            jumper.setMoveStop(true);
         }
         return true;
     }
 
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-        if (Gdx.input.getX() >= screenWidth / 2) {
-            jumper.setMoveLeft(false);
-        } else {
-            jumper.setMoveRight(false);
-        }
-        return true;
+        return false;
     }
 
     @Override
