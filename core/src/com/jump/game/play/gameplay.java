@@ -20,18 +20,18 @@ import java.util.Arrays;
 
 import java.util.ArrayList;
 
+import javax.xml.soap.Text;
+
 /**
  * Created by Ryan.T on 11/21/17.
  */
 
 public class gameplay extends state implements InputProcessor {
 
-    private Random rand;
     private Jumper jumper;
-    //private Platforms platform;
+    private Texture background;
     private Array<Platforms> platforms;
     private KillPlatform killplatform;
-    private int platformCount = 3;
     private Rectangle intersection;
     private float screenTracker;
     private int screenWidth = Gdx.graphics.getWidth();
@@ -43,8 +43,7 @@ public class gameplay extends state implements InputProcessor {
 
     public gameplay(GameStateManager gsm) {
         super(gsm);
-
-        rand = new Random();
+        background = new Texture("background.png");
         jumper = new Jumper(0,0);
         platforms = new Array<Platforms>();
         killplatform = new KillPlatform();
@@ -109,7 +108,8 @@ public class gameplay extends state implements InputProcessor {
         sb.setProjectionMatrix(cam.combined);
 
         sb.begin();
-        yourbitmap.setColor(Color.BLUE);
+        sb.draw(background,  cam.position.x - cam.viewportWidth / 2,  cam.position.y - cam.viewportHeight / 2, cam.viewportWidth, cam.viewportHeight);
+        yourbitmap.setColor(Color.RED);
         yourbitmap.getData().setScale(3f);
         yourbitmap.draw(sb, score, cam.position.x + screenWidth / 2 - 180, cam.position.y + screenHeight / 2 - 30);
         sb.draw(jumper.getJumper(), jumper.getPosition().x, jumper.getPosition().y, jumper.getSpriteSize(), Math.round(jumper.getSpriteSize() * 1.34));

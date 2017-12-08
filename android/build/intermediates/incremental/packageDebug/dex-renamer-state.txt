@@ -1,4 +1,4 @@
-#Thu Dec 07 18:52:28 CST 2017
+#Thu Dec 07 19:25:14 CST 2017
 base.0=C\:\\Users\\bcsca\\StudioProjects\\CPSC316FinalProject\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_cea30ded565b7672690a8e158f9ded9a28d7fb6e
 renamed.1=classes.dex
 renamed.0=classes2.dex
