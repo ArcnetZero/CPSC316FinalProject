@@ -91,7 +91,7 @@ public class gameplay extends state implements InputProcessor {
                 if(intersection.y > platform.getCloudBox().y && jumper.getVelocity().y < 0){
                     jumper.jump();
                     scoreCount++;
-                    score = "score:" + scoreCount;
+                    score = "Score:" + scoreCount;
                     platform.KillCloud();
                 }
             }
