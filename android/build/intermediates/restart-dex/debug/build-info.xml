@@ -3,77 +3,85 @@
     abi="x86"
     api-level="27"
     build-mode="COLD"
-    density="420dpi"
+    density="xxxhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1512674537646"
-    token="4725695694250626196"
+    timestamp="1512696057384"
+    token="6791356099266339312"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="254" />
+        duration="84" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="22" />
+        duration="5" />
     <task
         name="verifier"
-        duration="5" />
+        duration="2" />
 
     <artifact
-        location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/split-apk/debug/slices/slice_7.apk"
+        location="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_4.apk"
         type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1512674404844"
+        timestamp="1512694345681"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            location="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            location="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/split-apk/debug/slices/slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/split-apk/debug/slices/slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/split-apk/debug/slices/slice_8.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/split-apk/debug/slices/slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/split-apk/debug/slices/slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/split-apk/debug/dep/dependencies.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/split-apk/debug/slices/slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/outputs/apk/android-debug.apk"
+            location="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\outputs\apk\android-debug.apk"
             type="SPLIT_MAIN" />
+        <artifact
+            location="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1512674537646"
+        timestamp="1512696038076"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/Users/Ryan.T/Documents/Classes/Web Appl./FinalProject316/CPSC316FinalProject/android/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            location="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1512696057384"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
     </build>
 

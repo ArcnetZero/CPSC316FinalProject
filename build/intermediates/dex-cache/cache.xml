@@ -3,30 +3,57 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6b7a82d1464d6de85d5fa846b21ab9d96e85684f">
+        <dex dex="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_cea30ded565b7672690a8e158f9ded9a28d7fb6e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_f424396bca6facf69a825d29c2f883aae12d0769\classes.dex" />
+        <dex dex="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_fc5c4cb1ef9053ab10882545c716ffafdffb693f\classes.dex" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\core\build\libs\core-1.0.jar"
+        jar="C:\Users\bcsca\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx-backend-android\1.9.7\884a964d5a09643269390bdc4d30fc7bf8b0b9eb\gdx-backend-android-1.9.7.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
-        sha1="2b3eb12e39ecafa9a22fe3185b21b6784d822201">
-        <dex dex="C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\build\intermediates\pre-dexed\debug\core-1.0_40cbb9a793362fc82965be76f051448f49e595b9.jar" />
+        sha1="884a964d5a09643269390bdc4d30fc7bf8b0b9eb">
+        <dex dex="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\pre-dexed\debug\gdx-backend-android-1.9.7_1dfb8e5f3106a0f3a9d3ab74c1dba7552d93329f.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\core\build\libs\core-1.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.2"
-        sha1="6357b977abb2e18d13322983a7a5aef869714ab9">
-        <dex dex="C:\Users\Brenden Carney\AndroidStudioProjects\CPSC316FinalProject\android\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_10ba0bb983d908d1299a2679427fd011afe4eb74\classes.dex" />
+        sha1="05e329b993a7616f65759bf705910766e76088a3">
+        <dex dex="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\pre-dexed\debug\core-1.0_97b53025232e84f97674d9c238cd648b23f571f3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bcsca\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx-box2d\1.9.7\ad5b0c9246497c2141580f26ad82f51ecc9879e5\gdx-box2d-1.9.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ad5b0c9246497c2141580f26ad82f51ecc9879e5">
+        <dex dex="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\pre-dexed\debug\gdx-box2d-1.9.7_2bf6560faa1edfee6f554c904a88f37926779450.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bcsca\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx\1.9.7\8a021ba0bb6555c25dfc272697d379215aa05ed1\gdx-1.9.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8a021ba0bb6555c25dfc272697d379215aa05ed1">
+        <dex dex="C:\Users\bcsca\StudioProjects\CPSC316FinalProject\android\build\intermediates\pre-dexed\debug\gdx-1.9.7_e23b82c99d2dbc3c5ba96ce06b0e431409d3ea2c.jar" />
     </item>
 
 </items>
