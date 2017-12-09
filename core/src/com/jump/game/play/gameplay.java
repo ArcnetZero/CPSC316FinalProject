@@ -43,7 +43,7 @@ public class gameplay extends state implements InputProcessor {
 
     public gameplay(GameStateManager gsm) {
         super(gsm);
-        background = new Texture("background.png");
+        background = new Texture("someRandomBackground.png");
         jumper = new Jumper(0,0);
         platforms = new Array<Platforms>();
         killplatform = new KillPlatform();
@@ -97,6 +97,7 @@ public class gameplay extends state implements InputProcessor {
             }
             if(killplatform.collide(jumper.getJumperBox()) && jumper.getVelocity().y < 0){
                 gsm.set(new gameplay(gsm));
+                killplatform.repositionKillBox(cam.position.y-cam.viewportHeight/2);
             }
         }
         cam.update();

@@ -20,3 +20,4 @@ public class IOSLauncher extends IOSApplication.Delegate {
         pool.close();
     }
 }
+
